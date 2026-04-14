@@ -1,0 +1,46 @@
+services:
+  - type: worker
+    name: osprey-keeper
+    runtime: node
+    rootDir: keeper
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    plan: starter  # $7/mo — required for always-on; free tier spins down
+    envVars:
+      - key: RPC_URL
+        sync: false
+      - key: ADMIN_KEYPAIR
+        sync: false
+      - key: MANAGER_KEYPAIR
+        sync: false
+      - key: VAULT_ADDRESS
+        sync: false
+      - key: KAMINO_STRATEGY_ADDRESS
+        sync: false
+      - key: TRUSTFUL_STRATEGY_ADDRESS
+        sync: false
+      - key: USDC_MINT
+        value: EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v
+      - key: HL_API_URL
+        value: https://api.hyperliquid.xyz
+      - key: HL_PRIVATE_KEY
+        sync: false
+      - key: HL_WALLET_ADDRESS
+        sync: false
+      - key: OSPREY_API_URL
+        value: https://osprey-three.vercel.app
+      - key: DATABASE_URL
+        sync: false
+      # Adaptor program IDs — verify from docs.ranger.finance/security/deployed-programs
+      - key: KAMINO_ADAPTOR_PROGRAM_ID
+        sync: false
+      - key: TRUSTFUL_ADAPTOR_PROGRAM_ID
+        sync: false
+      # Kamino pool accounts — verify from github.com/voltrxyz/kamino-scripts
+      - key: KAMINO_COUNTER_PARTY_TA
+        sync: false
+      - key: KAMINO_COUNTER_PARTY_TA_AUTH
+        sync: false
+      - key: KAMINO_PROTOCOL_PROGRAM
+        sync: false
+    healthCheckPath: /health

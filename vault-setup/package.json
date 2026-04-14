@@ -1,0 +1,27 @@
+{
+  "name": "osprey-vault-setup",
+  "version": "1.0.0",
+  "description": "One-time Ranger vault initialization scripts",
+  "scripts": {
+    "01": "ts-node 01-create-vault.ts",
+    "02": "ts-node 02-lp-metadata.ts",
+    "03": "ts-node 03-add-kamino-adaptor.ts",
+    "04": "ts-node 04-add-trustful-adaptor.ts",
+    "05": "ts-node 05-init-kamino-strategy.ts",
+    "06": "ts-node 06-init-trustful-strategy.ts",
+    "07": "ts-node 07-verify-setup.ts"
+  },
+  "dependencies": {
+    "@solana/spl-token": "^0.4.8",
+    "@solana/web3.js": "^1.95.3",
+    "@voltr/vault-sdk": "^0.1.0",
+    "bn.js": "^5.2.1",
+    "dotenv": "^16.4.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.3"
+  },
+  "devDependencies": {
+    "@types/bn.js": "^5.1.6",
+    "@types/node": "^22.7.5"
+  }
+}
