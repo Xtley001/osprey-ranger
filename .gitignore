@@ -1,0 +1,67 @@
+# ──────────────────────────────────────────────
+# SECRETS — never commit
+# ──────────────────────────────────────────────
+.env
+.env.local
+.env.*.local
+
+# Solana keypair files — keep only .example versions
+admin.json
+manager.json
+vault.json
+*.keypair.json
+
+# ──────────────────────────────────────────────
+# Dependencies
+# ──────────────────────────────────────────────
+node_modules/
+.pnp
+.pnp.js
+
+# Python
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+.eggs/
+.pytest_cache/
+*.pyc
+
+# ──────────────────────────────────────────────
+# Build outputs
+# ──────────────────────────────────────────────
+dist/
+build/
+*.js.map
+*.d.ts.map
+
+# ──────────────────────────────────────────────
+# Logs & reports
+# ──────────────────────────────────────────────
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+logs/
+quant/reports/*.html
+quant/reports/*.pdf
+
+# ──────────────────────────────────────────────
+# OS / Editor
+# ──────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ──────────────────────────────────────────────
+# Misc
+# ──────────────────────────────────────────────
+*.zip
+*.tar.gz
+coverage/
+.nyc_output/
